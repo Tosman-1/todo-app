@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="in-bu">
+        <input placeholder="Input a Task" type="text" id="todoinput" />
+        <button onclick="addTodo()">Add</button>
+      </div>
+      <div id="display" class="todo-dis"></div>
+    </div>
+  </body>
+</html>
+<script>
+  let todoArr = [];
+  let todo = document.getElementById("todoinput");
+
+  displayTodo();
+
+  function displayTodo() {
+    let todoHTML = "";
+
+    for (let i = 0; i < todoArr.length; i++) {
+      let element = todoArr[i];
+      let html = `
+         <div> ${element}</div>
+          <button onclick=" todoArr.splice(${i},1)
+          displayTodo()
+          ">Delete</button>
+        `;
+      todoHTML += html;
+    }
+
+    document.getElementById("display").innerHTML = todoHTML;
+  }
+
+  function addTodo() {
+    let inputValue = todo.value;
+    todoArr.push(inputValue);
+    console.log(todoArr);
+
+    todo.value = "";
+
+    displayTodo();
+  }
+</script>

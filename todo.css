@@ -1,0 +1,33 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.in-bu, .todo-dis{
+  display: grid;
+  grid-template-columns: 300px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.in-bu input, button{
+  padding: 10px;
+  border-radius: 7px;
+  border: 2px solid black;
+}
+
+.in-bu button{
+  color: white;
+  background-color: green;
+}
+
+.todo-dis button{
+  color: white;
+  background-color: rgb(138, 28, 28);
+}
+
+.todo-dis div{
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 7px;
+}
